@@ -1,0 +1,33 @@
+@use '../../styles/utilities.scss' as *;
+
+$pastel-blue: #f0f6fa;
+$pastel-blue-text: #2a72a8;
+
+@mixin baseButton() {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.viewDetails {
+  @include baseButton();
+  background-color: $pastel-blue;
+  color: $pastel-blue-text;
+  padding-block: pixTOrem(10px);
+  padding-inline: pixTOrem(12px);
+  border-radius: pixTOrem(38px);
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken($pastel-blue, $amount: 4);
+  }
+}
+
+.dot_v {
+  cursor: pointer;
+  border-radius: pixTOrem(20px);
+
+  &:active {
+    background-color: rgb(232, 232, 232);
+  }
+}

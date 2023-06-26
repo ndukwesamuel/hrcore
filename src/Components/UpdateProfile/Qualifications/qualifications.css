@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+.step_afterchosennumber {
+    padding: 3px 8px;
+    background-color: rgba(247, 37, 133, 0.2);
+    color: #f72585;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .space_buttonholder {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .education{
+  border: 1px solid #d0d5dd;
+  padding: 14px 10px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #f6f6f6;
+  font-family: "Manrope";
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  color: #344054;
+  }
+  .save_update{
+    border: 1px solid #d0d5dd;
+    color: #ffffff;
+    border-radius: 7px;
+    width: 71px;
+    height: 33px;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Inter";
+    padding: 6px 8px 6px 16px;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, #2A72A8 50%, #86d0ea 50%);
+    -webkit-transition: background-position 250ms;
+    -moz-transition: background-position 250ms;
+    transition: background-position 250ms;
+  }
+  .save_update:hover {
+    background-position: 0 -100%;
+  }
+  

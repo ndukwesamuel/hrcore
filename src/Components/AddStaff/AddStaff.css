@@ -1,0 +1,183 @@
+.addstaff {
+  background-color: #eff6fc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.addstaff__right {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 82%;
+  padding: 0 1rem;
+}
+
+.addstaff__content {
+  /* margin-top: 3rem; */
+}
+
+.addstaff__invite-container {
+  /* width: 834px; */
+  padding: 2rem 2rem;
+  /* height: 503px; */
+  background: #ffffff;
+  border: 0.93px solid #eaecf0;
+  box-shadow: 0px 3.73684px 7.47368px -1.86842px rgba(16, 24, 40, 0.1),
+    0px 1.86842px 3.73684px -1.86842px rgba(16, 24, 40, 0.06);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.addstaff__list {
+  display: flex;
+  list-style: none;
+  padding: 0px 9px;
+  gap: 24px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.addstaff__item {
+  text-transform: capitalize;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
+  color: #000000;
+  cursor: pointer;
+}
+
+.addstaff__item a {
+  color: #667085;
+}
+
+.addstaff__heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #344054;
+  padding: 0;
+  margin: 0;
+}
+.addstaff__form {
+  margin-top: 1rem;
+}
+.addstaff__form input[type='text'],
+.addstaff__form input[type='email'] {
+  width: 100%;
+  padding: 12px 16px;
+  gap: 8px;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+.addstaff__form label {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+  text-transform: capitalize;
+}
+.addstaff__name {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.addstaff__email,
+.addstaff__id {
+  /* margin-bottom: 2rem; */
+}
+.addstaff__firstname,
+.addstaff__lastname {
+  flex: 0 0 48%;
+}
+
+.addstaff__action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.addstaff__action button {
+  padding: 0.6rem 1rem;
+  width: 184px;
+  text-align: center;
+  cursor: pointer;
+  background: #2a72a8;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.addstaff__form input::placeholder {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  color: #667085;
+  text-transform: capitalize;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+dialog {
+  width: 500px;
+  height: 350px;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+
+.popmodal__cover {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  /* padding: 0.5rem 1rem; */
+  /* text-align: center; */
+}
+.popmodal__close {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  width: 2rem;
+  height: 1.8rem;
+  background: rgba(180, 180, 180, 0.24);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.popmodal__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+.whole_basicinfo {
+  background-color: #eff6fc;
+  min-height: 100vh;
+}
+
+.formupdate {
+  width: 75%;
+  margin-left: 12.5%;
+  padding-top: 20px;
+}
+.profile_basicinfo {
+  color: #667085;
+  font-family: 'Manrope';
+  font-weight: 600;
+}
+.nexttab_movement {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+}
+.update_text {
+  color: black;
+}
+.forminput_details {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.headerspacing {
+  width: 90%;
+  margin-left: 5%;
+  font-family: 'Manrope';
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.updateprofile_text {
+  font-weight: 600;
+  font-size: 18px;
+}
+.stepforms {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.firststep {
+  display: flex;
+  align-items: center;
+}
+.stepnumber {
+  padding: 3px 8px;
+  color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: 600;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, #f72585 50%, #97dbef 50%);
+  -webkit-transition: background-position 250ms;
+  -moz-transition: background-position 250ms;
+  transition: background-position 250ms;
+}
+.step_beforenumber, .stepnumber {
+  cursor: pointer;
+}
+.stepnumber:hover {
+  background-position: 0 -100%;
+}
+.step_name {
+  font-weight: 600;
+}
+.step_unchosennumber {
+  color: #6b6b6b;
+  border-radius: 50%;
+  margin-right: 10px;
+  padding: 3px 8px;
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, #e4e4e4 50%, #97dbef 50%);
+}
+.update_uploadbutton {
+  border: none;
+  margin-top: 10px;
+  background-color: #2a72a8;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.update_fileuploader {
+  display: none;
+}
+.name_updateinput {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.formfield_update {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5%;
+}
+.nameinput_text {
+  width: 45%;
+}
+.firstname_upload {
+  border: 1px solid #d0d5dd;
+  padding:14px 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+.selectname_upload {
+  border: 1px solid #d0d5dd;
+  padding: 14px 10px;
+  border-radius: 10px;
+  width: 100%;
+  background-image: url('https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png');
+  background-position: right 10px top 50%, 0 0;
+  background-repeat: no-repeat;
+  background-size: 10px 15px;
+}
+.next_updatebutton {
+  border: 1px solid #d0d5dd;
+  padding: 7px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, #ffffff 50%, #e4f3fc 50%);
+  -webkit-transition: background-position 250ms;
+  -moz-transition: background-position 250ms;
+  transition: background-position 250ms;
+}
+.next_updatebutton:hover {
+  background-position: 0 -100%;
+}
+.next_buttonholder {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50;
+}
+.preview {
+  margin-top: 50;
+  display: flex;
+  flex-direction: column;
+}
+.image { 
+  max-width: 100%;
+  max-height: 320;
+}
+.delete {
+  cursor: pointer;
+  padding: 15;
+  background: red;
+  color: white;
+  border: none;
+}
+.profileImg {
+  border-radius: 50%;
+}

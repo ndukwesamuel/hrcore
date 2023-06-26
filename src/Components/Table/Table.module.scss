@@ -1,0 +1,319 @@
+@use '../../styles/utilities.scss' as *;
+
+@mixin baseTable($max_width) {
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  -webkit-animation: reveal 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+  animation: reveal 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+
+  input[type='checkbox'] {
+    accent-color: map-get($brand, 'blue');
+    scale: 1.3;
+    cursor: pointer;
+  }
+}
+
+@mixin body {
+  min-height: pixTOrem(250px);
+  position: relative;
+}
+.table_body {
+  @include body;
+
+  &_empty {
+    @include body;
+    display: grid;
+    place-items: center;
+  }
+}
+@mixin status($bg) {
+  background-color: $bg;
+  display: flex;
+  justify-content: center;
+  border-radius: pixTOrem(100px);
+  padding-block: pixTOrem(8px);
+  max-width: pixTOrem(100px);
+  font-weight: 600;
+}
+
+.pending {
+  @include status(#f0f6fa);
+  color: #2a72a8;
+}
+.approved {
+  @include status(#f0faf2);
+  color: #2aa847;
+}
+.declined {
+  @include status(#faf0f3);
+  color: #a82a65;
+}
+
+$text: #667085;
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+// table type
+.table_directory {
+  @include baseTable(1150px);
+}
+
+.flex {
+  @include flex;
+  &_small {
+    @include flex;
+    gap: pixTOrem(10px);
+  }
+}
+
+.tags {
+  background-color: #f1f1f1;
+  border-radius: pixTOrem(50px);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: pixTOrem(4px) pixTOrem(10px);
+}
+
+.bold {
+  font-weight: 600;
+  color: map-get($neutral, 'black');
+  @include line-trim(1);
+}
+
+// General table styles
+@mixin tableHead {
+  border: 1px solid map-get($neutral, 'light-smoke');
+  border-width: 0 0 1px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: map-get($neutral, 'lightest-smoke');
+
+  //  table columns
+  th {
+    padding-block: pixTOrem(12px);
+    font-size: pixTOrem(12px);
+    padding-inline: pixTOrem(10px);
+    color: map-get($neutral, 'dark-smoke');
+    font-weight: 500;
+  }
+}
+
+// --> table head
+.table_head {
+  @include tableHead;
+
+  &_directory {
+    @include tableHead;
+    th:nth-child(1) {
+      padding-left: pixTOrem(16px);
+    }
+  }
+}
+
+//  -> table row
+$stroke: #eaecf0;
+@mixin row {
+  background-color: map-get($neutral, 'white');
+  border: 1px solid $stroke;
+  border-width: 0 0 1px 0;
+
+  &:hover {
+    background-color: lighten(map-get($neutral, $key: 'smoke'), $amount: 13);
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: darken($color: #f8fcff, $amount: 8);
+  }
+  td {
+    padding-inline: pixTOrem(10px);
+    font-size: pixTOrem(13px);
+    padding-block: pixTOrem(24px);
+    color: $text;
+    position: relative;
+  }
+}
+$pastel-blue: #f0f6fa;
+$pastel-blue-text: #2a72a8;
+
+@mixin commands($bg: 'white', $opacity: 0) {
+  position: absolute;
+  background-color: map-get($neutral, $bg);
+  max-width: pixTOrem(148px);
+  top: 28px;
+  right: pixTOrem(68px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8.05263px 10.7368px -2.68421px rgba(16, 24, 40, 0.08),
+    0px 2.68421px 4.02632px -1.34211px rgba(16, 24, 40, 0.03);
+  z-index: 10;
+  visibility: hidden;
+  opacity: $opacity;
+  border: 1px solid map-get($neutral, 'light-smoke');
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  translate: 2rem 0;
+  & * {
+    padding: 0.5rem;
+    width: pixTOrem(148px);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $pastel-blue;
+    }
+  }
+
+  &_primary {
+    color: map-get($brand, 'blue');
+  }
+}
+
+.table_row {
+  @include row;
+
+  &_commands {
+    @include commands;
+
+    &_hide {
+      @include commands;
+    }
+    &_active {
+      @include commands('white', 1);
+      visibility: visible;
+      translate: 0;
+    }
+  }
+
+  &_directory {
+    @include row;
+    text-transform: capitalize;
+    &_skeleton {
+      @include row;
+      td {
+        & *:not(.skeleton_data) {
+          display: none;
+        }
+        .skeleton_data {
+          // aspect-ratio: 3/1;
+          width: 100%;
+          height: 100%;
+          max-width: 300px;
+          min-height: 30px;
+          border-radius: 50px;
+          -webkit-animation: skeleton 0.8s alternate infinite;
+          animation: skeleton 1.5s alternate infinite;
+        }
+      }
+    }
+    td:nth-child(1) {
+      padding-right: pixTOrem(6px);
+      padding-left: pixTOrem(16px);
+    }
+
+    .directory_profile {
+      display: flex;
+      gap: pixTOrem(10px);
+      align-items: center;
+      span {
+        width: pixTOrem(36px);
+        aspect-ratio: 1/1;
+        border: 1px solid map-get($brand, 'red');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: pixTOrem(24px);
+        &:not(:has(img)) {
+          background-color: map-get($brand, 'red');
+          color: map-get($neutral, 'white');
+          font-size: pixTOrem(12px);
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+      }
+      .directory_img {
+        width: pixTOrem(36px);
+        aspect-ratio: 1/1;
+        border: 1px solid map-get($brand, 'red');
+      }
+      p {
+        color: map-get($neutral, 'black');
+        font-weight: 600;
+      }
+    }
+  }
+
+  // --> table row hover
+  &:hover {
+    background-color: lighten(map-get($neutral, 'lightest-smoke'), $amount: 2);
+  }
+}
+
+//  --> table body
+tbody {
+}
+
+@container (width < 1000px) {
+  .table_directory {
+    th {
+      padding-block: pixTOrem(10px);
+      font-size: pixTOrem(10px);
+      padding-inline: pixTOrem(10px);
+      color: map-get($neutral, 'dark-smoke');
+      font-weight: 500;
+    }
+  }
+}
+
+@-webkit-keyframes skeleton {
+  0% {
+    background-color: map-get($neutral, 'smoke');
+  }
+  100% {
+    background-color: map-get($neutral, 'lightest-smoke');
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: map-get($neutral, 'smoke');
+  }
+  100% {
+    background-color: map-get($neutral, 'lightest-smoke');
+  }
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

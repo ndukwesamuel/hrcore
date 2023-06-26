@@ -1,0 +1,21 @@
+.t{
+    background-color: red;
+}
+
+
+.ProfileHeader{
+    & button {
+        padding: 3px 16px;
+        border-radius: 3px;
+    }
+    .userProfile_img {
+            width: 5.406rem;
+            height: 5.406rem;    
+        & img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 100%;        
+        }
+    }
+
+}

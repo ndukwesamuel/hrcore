@@ -1,0 +1,194 @@
+@use '../../../styles/utilities.scss' as *;
+
+@mixin basic($radius: 6px) {
+  background-color: map-get($neutral, $key: 'white');
+  width: 100%;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: pixTOrem($radius);
+  -webkit-border-radius: pixTOrem($radius);
+  -moz-border-radius: pixTOrem($radius);
+  -ms-border-radius: pixTOrem($radius);
+  -o-border-radius: pixTOrem($radius);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin title($font: 16px) {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-size: pixTOrem($font);
+  color: map-get($neutral, $key: 'black');
+}
+
+.stat_card {
+  @include basic;
+  max-width: pixTOrem(248px);
+  padding: pixTOrem(20px) pixTOrem(16px);
+  min-height: pixTOrem(110px);
+  .lower {
+    margin-top: 4px;
+  }
+
+  .top {
+    height: pixTOrem(20px);
+    position: relative;
+    .icon {
+      position: absolute;
+      right: pixTOrem(-8px);
+      top: pixTOrem(-30px);
+    }
+  }
+
+  .data_container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .data_number {
+    font-size: pixTOrem(24px);
+    font-weight: 800;
+    &_stats {
+      transition: all 0.3s ease-in-out;
+      font-size: pixTOrem(12px);
+      font-weight: 600;
+      background-color: map-get($neutral, $key: 'light-smoke');
+      color: map-get($neutral, $key: 'black');
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 4px 8px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      cursor: pointer;
+
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: map-get($neutral, $key: 'dark-smoke');
+        color: map-get($neutral, $key: 'white');
+      }
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    &_title {
+      font-size: 12px;
+      color: map-get($neutral, $key: 'dark-smoke');
+      margin-top: 8px;
+    }
+  }
+}
+
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  padding: pixTOrem(20px) pixTOrem(16px);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .title {
+    @include title;
+  }
+}
+
+.view_all {
+  display: flex;
+  align-items: center;
+  gap: pixTOrem(8px);
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($brand, $key: 'blue');
+    svg {
+      fill: map-get($brand, $key: 'blue');
+    }
+  }
+}
+.announcement {
+  @include basic;
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: pixTOrem(4px);
+  }
+  &:has(.no_announcement) {
+    .items {
+      display: grid;
+      place-items: center;
+    }
+  }
+  min-height: pixTOrem(474px);
+  max-width: pixTOrem(268px);
+  padding: pixTOrem(16px);
+  display: flex;
+  gap: pixTOrem(16px);
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: pixTOrem(24px);
+  margin-top: pixTOrem(24px);
+
+  h3 {
+    @include title;
+    cursor: pointer;
+  }
+
+  & > .items {
+    display: flex;
+    flex-direction: column;
+    gap: pixTOrem(16px);
+  }
+}
+
+.engagement_card {
+  @include basic;
+  min-height: pixTOrem(81px);
+  max-width: pixTOrem(235px);
+  width: pixTOrem(235px);
+  padding: pixTOrem(16px);
+  border: 1px solid rgba(217, 217, 217, 0.4);
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  h4 {
+    @include title(14px);
+    @include line-trim(1);
+  }
+  p,
+  span {
+    font-size: 12px;
+    @include line-trim(3);
+  }
+
+  div {
+    justify-content: space-between;
+    margin-top: pixTOrem(8px);
+  }
+  &:hover {
+    background-color: map-get($neutral, $key: 'light-smoke');
+  }
+}
+
+.analytics {
+  @include basic;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}

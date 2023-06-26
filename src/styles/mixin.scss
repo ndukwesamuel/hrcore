@@ -1,0 +1,51 @@
+@use './functions.scss' as *;
+@use './colors.scss' as *;
+
+@mixin media($args) {
+  @media screen and (min-width: $args) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: calc(pixTOrem(map-get($container, 'width')) - pixTOrem(16px));
+  margin-inline: auto;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-inline: pixTOrem(16px);
+}
+
+@mixin line-trim($number) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin profileImage($size: 50px, $width: 40px) {
+  border-radius: $size;
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  -o-border-radius: $size;
+  width: pixTOrem($width);
+  aspect-ratio: 1/1;
+
+  border: 2px solid map-get($brand, 'red');
+}
+
+@mixin profileNoImage {
+  width: pixTOrem(36px);
+  aspect-ratio: 1/1;
+  border: 1px solid map-get($brand, 'red');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: pixTOrem(24px);
+  background-color: map-get($brand, 'red');
+  color: map-get($neutral, 'white');
+  font-size: pixTOrem(12px);
+  font-weight: 500;
+  text-transform: capitalize;
+}

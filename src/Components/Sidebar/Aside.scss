@@ -1,0 +1,194 @@
+@use '../../styles/utilities.scss' as *;
+
+// Side Bar menu
+
+.mainSideNave {
+  $max-height: pixTOrem(418px);
+  -webkit-padding-start: pixTOrem(24px);
+  padding-inline-start: pixTOrem(24px);
+  -webkit-padding-end: pixTOrem(16px);
+  padding-inline-end: pixTOrem(16px);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  justify-content: space-between;
+  position: fixed;
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255, 192, 203, 0);
+    width: 4px;
+  }
+
+  .menuText {
+    color: map-get($neutral, 'dark-smoke');
+  }
+
+  .innerTop {
+    -webkit-padding-before: pixTOrem(24px);
+    padding-block-start: pixTOrem(24px);
+  }
+
+  .brandLogo {
+    max-width: pixTOrem(50px);
+    margin-inline: auto;
+  }
+  .sideNavList {
+    height: 100%;
+    max-height: $max-height;
+    overflow-y: scroll;
+    @include media(1480px) {
+      max-height: calc($max-height + 15vh);
+    }
+  }
+
+  .sideNavLogout {
+    display: flex;
+    justify-content: flex-start;
+    gap: pixTOrem(16px);
+    align-items: center;
+    p {
+      font-size: pixTOrem(16px);
+      font-weight: 600;
+    }
+    cursor: pointer;
+  }
+
+  .bottomSidenav {
+    -webkit-padding-after: pixTOrem(20px);
+    padding-block-end: pixTOrem(20px);
+
+    .bottomInner {
+      padding-left: pixTOrem(10px);
+    }
+
+    .navProfile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: pixTOrem(10px);
+
+      .profileDetails {
+        background-color: map-get($neutral, 'white');
+        border-radius: pixTOrem(4px);
+        padding: pixTOrem(4px);
+        display: flex;
+        gap: pixTOrem(8px);
+
+        &:hover {
+          background-color: map-get($neutral, 'light-smoke');
+          cursor: pointer;
+        }
+        .image {
+          max-width: pixTOrem(34px);
+        }
+      }
+
+      .profileIn {
+        p:nth-child(2) {
+          font-size: pixTOrem(10px);
+          padding-top: pixTOrem(4px);
+          font-weight: 600;
+        }
+        p:nth-child(1) {
+          font-size: pixTOrem(14px);
+        }
+      }
+    }
+  }
+
+  .sideNavItem {
+    overflow-y: hidden;
+    overflow-x: visible;
+    border-width: 0;
+    &:has(.itemChild > .active) .navItemGroup {
+      border: 2px solid map-get($brand, 'red');
+      border-width: 0 0 0 pixTOrem(3px);
+
+      .navItemWrapper {
+        -webkit-padding-start: pixTOrem(9px);
+        padding-inline-start: pixTOrem(9px);
+      }
+    }
+    // hide items
+    &.hide {
+      max-height: pixTOrem(48px);
+    }
+
+    &.show {
+      max-height: pixTOrem(1000px);
+      transition: max-height 1s ease-in-out;
+    }
+
+    &:is(.show) .navItemGroup > svg {
+      transform: rotate(180deg);
+    }
+
+    .navItemGroup > svg {
+      transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    .navItemGroup {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($neutral, 'smoke'), $amount: 10);
+        border-radius: pixTOrem(4px);
+      }
+      // &:is(.active) {
+      //   border: 2px solid map-get($brand, 'red');
+      //   border-width: 0 0 0 pixTOrem(3px);
+      // }
+    }
+  }
+}
+
+.navItemWrapper {
+  display: flex;
+  gap: pixTOrem(8px);
+  align-items: center;
+  padding-inline: pixTOrem(12px);
+  padding-block: pixTOrem(12px);
+
+  .sideNavName {
+    color: map-get($neutral, 'black');
+    font-size: pixTOrem(16px);
+    font-weight: 600;
+  }
+}
+
+.sideNavItemChildren {
+  -webkit-padding-start: pixTOrem(16px);
+  padding-inline-start: pixTOrem(16px);
+
+  .itemChild {
+    -webkit-padding-start: pixTOrem(22px);
+    padding-inline-start: pixTOrem(22px);
+    border: pixTOrem(1px) solid map-get($neutral, 'smoke');
+    border-width: 0 0 0 pixTOrem(2px);
+
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(map-get($neutral, 'smoke'), $amount: 10);
+    }
+
+    &:has(.active) {
+      background-color: lighten(map-get($neutral, 'smoke'), $amount: 10);
+    }
+
+    a {
+      font-size: pixTOrem(14px);
+      font-weight: 600;
+      width: 100%;
+      padding-block: pixTOrem(8px);
+    }
+  }
+}

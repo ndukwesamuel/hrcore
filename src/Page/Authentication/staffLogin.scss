@@ -1,0 +1,153 @@
+@use '../../styles/utilities.scss' as *;
+
+.login-container {
+  display: flex;
+  align-items: center;
+
+  .login-left-item {
+    background-color: map-get($brand, 'blue');
+    min-height: 100vh;
+    background-image: url('../../assets/hr.png'), url('../../assets/line.png');
+    background-position: top left, 100% 100%;
+    background-size: 15%, auto;
+    background-repeat: no-repeat;
+    flex: 1 1 0;
+
+    .login-left {
+      margin-top: 10vh;
+      -webkit-padding-start: 8vw;
+      padding-inline-start: 8vw;
+      -webkit-padding-start: 8dvw;
+      padding-inline-start: 8dvw;
+      padding-inline-end: 3vw;
+      -webkit-padding-end: 3vw;
+      padding-inline-end: 3dvw;
+      display: flex;
+      justify-content: center;
+
+      &-sub {
+        color: map-get($neutral, 'smoke');
+        max-width: 37ch;
+        margin-top: 3vh;
+        font-size: pixTOrem(17px);
+        line-height: pixTOrem(27px);
+      }
+
+      &-testimonials {
+        margin-top: 18vh;
+      }
+
+      &-flex {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .login-left-h1 {
+      font-size: clamp(2rem, 1.703rem + 1.48vw, 3.001rem);
+      color: map-get($neutral, 'white');
+      font-weight: 900;
+      max-width: 14ch;
+      margin: 0;
+    }
+  }
+
+  .login-right {
+    flex: 1 1;
+    min-height: 100dvh;
+
+    &-container {
+      margin-left: 4dvw;
+      padding-block-start: 10vh;
+      -webkit-padding-before: 10dvh;
+      padding-block-start: 10dvh;
+      -webkit-padding-end: pixTOrem(24px);
+      padding-inline-end: pixTOrem(24px);
+    }
+
+    &-tittle {
+      font-size: clamp(1.75rem, 1.401rem + 1.74vw, 2.926rem);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .highlight {
+        font-size: pixTOrem(28px);
+        color: #cbd5e1;
+        &:hover {
+          color: darken($color: #cbd5e1, $amount: 20);
+          transition: color 0.5s ease-in;
+        }
+      }
+    }
+
+    &-subtitle {
+      margin-top: 4vh;
+      margin-top: 4dvh;
+      max-width: 40ch;
+      font-size: pixTOrem(17px);
+      line-height: pixTOrem(27px);
+    }
+
+    &-forgot_password {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-form {
+      margin-top: 8dvh;
+    }
+
+    &-button {
+      background-color: map-get($brand, 'red');
+      color: map-get($neutral, 'white');
+      font-size: pixTOrem(16px);
+      font-weight: 700;
+      padding-block: pixTOrem(18px);
+      padding-inline: pixTOrem(48px);
+      border-radius: pixTOrem(10px);
+      border: none;
+      cursor: pointer;
+      margin-top: 6vh;
+      transition: all 0.2s ease-in;
+      box-shadow: 0px 17px 27px rgba(205, 29, 29, 0.19),
+        0px 11.0185px 15.8125px rgba(205, 29, 29, 0.144259),
+        0px 6.54815px 8.6px rgba(205, 29, 29, 0.115407),
+        0px 3.4px 4.3875px rgba(205, 29, 29, 0.095),
+        0px 1.38519px 2.2px rgba(205, 29, 29, 0.0745926),
+        0px 0.314815px 1.0625px rgba(205, 29, 29, 0.0457407);
+      &:hover {
+        background-color: lighten($color: map-get($brand, 'red'), $amount: 5);
+      }
+    }
+    &-switch {
+      margin-top: 4vh;
+    }
+    &-label {
+      font-size: pixTOrem(16px);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    &-input {
+      padding-block: pixTOrem(16px);
+      padding-inline: pixTOrem(20px);
+      border: 2px solid map-get($neutral, 'smoke');
+      border-radius: pixTOrem(10px);
+
+      &:focus {
+        outline: none;
+        border: 2px solid map-get($brand, 'blue');
+      }
+      &:hover {
+        border: 2px solid lighten(map-get($brand, 'blue'), $amount: 10);
+        -webkit-filter: blur(0.5px);
+      }
+    }
+
+    .form-element {
+      display: flex;
+      flex-direction: column;
+      gap: pixTOrem(10px);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.resignationtablebutton {
+  width: 90px;
+  min-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.resignationtablebutton button {
+  background-color: #f72585;
+  color: #fff;
+  padding: 0 1rem;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  cursor: pointer;
+  width: 100% !important;
+}

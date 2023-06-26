@@ -1,0 +1,13 @@
+.resignstep {
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 5px;
+  width: 70%;
+  margin-left: 15%;
+}
+.offboarding_subtopic {
+  display: flex;
+  color: #667085;
+  font-weight: 600;
+  align-items: center;
+}

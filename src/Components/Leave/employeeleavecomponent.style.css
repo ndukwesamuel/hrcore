@@ -1,0 +1,107 @@
+.employeeleavecomponent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.employeeleavecomponent__section {
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+.employeeleavecomponent__body {
+  width: 100%;
+  background-color: #fff;
+  border: 0.934211px solid #eaecf0;
+  box-shadow: 0px 3.73684px 7.47368px -1.86842px rgba(16, 24, 40, 0.1),
+    0px 1.86842px 3.73684px -1.86842px rgba(16, 24, 40, 0.06);
+  /* border-radius: 8px; */
+  overflow-x: auto;
+}
+.employeeleavecomponent__top {
+  width: 100%;
+  display: flex;
+  text-transform: capitalize;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 18.6842px 22.4211px 17.75px;
+  gap: 14.95px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.employeeleavecomponent__left {
+  flex: 0 0 45%;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16.8158px;
+  line-height: 26px;
+  color: #101828;
+}
+
+.employeeleavecomponent__right {
+}
+
+.leaverequest-button {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 7px 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: #f72585;
+  border-radius: 4px;
+}
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.pagination li {
+  padding: 0.3rem 0.8rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13.0789px;
+  line-height: 19px;
+  color: #7f56d9;
+}
+.pagination .selected {
+  background: #f9f5ff;
+  border-radius: 7.47368px;
+}
+.pagination li:first-child,
+.pagination li:last-child {
+  margin: 0 auto 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7.47368px 13.0789px;
+  width: 106.32px;
+  height: 33.95px;
+  background: #ffffff;
+  border: 0.934211px solid #d0d5dd;
+  box-shadow: 0px 0.934211px 1.86842px rgba(16, 24, 40, 0.05);
+  border-radius: 7.47368px;
+}
+
+.pagination li:last-child {
+  margin: 0 0 0 auto;
+}
+
+
+@media (min-width: 1280px) { 
+
+
+
+  
+ }

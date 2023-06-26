@@ -1,0 +1,49 @@
+{
+  "profile": {
+    "first_name": "First Name kaka",
+    "last_name": "Last Name",
+    "middle_name": "Heart",
+    "gender": "male",
+    "marital_status": "single",
+    "lga": "Mainland",
+    "residence": "Obanikoro",
+    "profile_image": "",
+    "dob": "1990-10-20",
+    "designation": "dont know for now",
+    "origin_state": "Lagos",
+    "employee_id": "ICS12345",
+    "role": "Manager",
+    "grade": "G9",
+    "position": "P8",
+    "branch": "Fadeyi",
+    "pension": "xxxxx",
+    "pension_number": "9434",
+    "department": 8,
+    "hmo": {
+      "hmo_id": "AD/101",
+      "hospital": "Plaza Cross",
+      "status": "active",
+      "plan": "xxx"
+    },
+    "education": [
+      {
+        "institution": "University of Lagos",
+        "award": "BSc. Engineering",
+        "year_completed": "2008"
+      },
+      {
+        "institution": "University of Kenturky",
+        "award": "Msc. Robotics",
+        "year_completed": "2010"
+      }
+    ],
+    "experience": [
+      {
+        "organization": "Cubic Consults",
+        "role": "Clerk",
+        "started": "2005-05-02",
+        "ended": "2007-02-10"
+      }
+    ]
+  }
+}

@@ -1,0 +1,217 @@
+@use '../../../styles/utilities.scss' as *;
+
+@mixin items {
+  margin-top: pixTOrem(32px);
+}
+.container {
+  @include container;
+}
+
+@mixin piechartItems {
+  background-color: map-get($neutral, $key: 'white');
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  aspect-ratio: 1;
+  width: pixTOrem(70px);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  p:nth-child(2) {
+    font-size: 12px;
+    color: map-get($neutral, $key: 'black');
+  }
+  p:nth-child(1) {
+    color: map-get($neutral, $key: 'black');
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+.dashboard_layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: pixTOrem(36px);
+  padding-top: pixTOrem(20px);
+}
+
+.top_stats {
+  display: flex;
+  justify-content: space-between;
+  gap: pixTOrem(16px);
+}
+
+.analytics {
+  @include items;
+  display: flex;
+  justify-content: space-between;
+  gap: pixTOrem(16px);
+  min-height: pixTOrem(294px);
+  max-width: calc(300px + 10vw);
+  @include media(900px) {
+    max-width: none;
+  }
+  .two {
+    width: 100%;
+  }
+  .one {
+    max-width: 200px;
+    position: relative;
+
+    .women,
+    .men {
+      @include piechartItems;
+    }
+    .men {
+      left: 72%;
+      top: 52%;
+      animation: hover2 2s alternate infinite ease-in-out 1s;
+      -webkit-animation: hover2 2s alternate infinite ease-in-out 1s;
+    }
+    .women {
+      top: 13%;
+      left: -8%;
+      animation: hover1 2s alternate infinite ease-in-out;
+      -webkit-animation: hover1 2s alternate infinite ease-in-out;
+    }
+  }
+  &:nth-child(1) {
+    max-width: pixTOrem(250px);
+  }
+}
+
+.stats {
+  background-color: white;
+  min-height: pixTOrem(102px);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 16.75rem;
+  &_image {
+    position: relative;
+    @include profileImage;
+    &:nth-child(2) {
+      left: -14px;
+    }
+    &:nth-child(3) {
+      @include profileNoImage;
+      width: 40px;
+      left: -32px;
+    }
+    &:nth-child(1) {
+      left: 4px;
+    }
+  }
+
+  &:nth-child(1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    place-content: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($brand, $key: 'blue');
+      color: white;
+    }
+  }
+
+  &:nth-child(2) {
+    margin-top: 16px;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    grid-template-rows: auto 1fr;
+    & > * {
+      &:nth-child(1) {
+        padding-block: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-inline: 10px;
+        font-size: 12px;
+      }
+      &:nth-child(2) {
+        background-color: hsla(224, 43%, 80%, 0.167);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        border-radius: 4px;
+        /* flex: 1; */
+        display: flex;
+        min-height: 25px;
+        flex-grow: 1;
+        font-weight: 700;
+
+        & > * {
+          &:nth-child(1) {
+            flex: 1;
+            /* height: 10px; */
+            display: grid;
+            place-items: center;
+            border: 1px solid black;
+            border-width: 0 2px 0 0;
+          }
+          &:nth-child(2) {
+            flex: 1;
+            display: grid;
+            place-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tables {
+  @include items;
+  background-color: white;
+  gap: pixTOrem(16px);
+  min-height: pixTOrem(370px);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+@-webkit-keyframes hover1 {
+  to {
+    translate: 0 16px;
+  }
+}
+
+@keyframes hover1 {
+  to {
+    translate: 0 16px;
+  }
+}
+
+@-webkit-keyframes hover2 {
+  to {
+    translate: 0 -16px;
+  }
+}
+
+@keyframes hover2 {
+  to {
+    translate: 0 -16px;
+  }
+}
+
+
+
+.birthday_input  input[type="month"]::-webkit-calendar-picker-indicator {
+  display: none;
+}

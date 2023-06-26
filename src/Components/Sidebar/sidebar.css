@@ -1,0 +1,132 @@
+.sidebar {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  padding: 1.5rem 1rem 0 1rem;
+  box-sizing: border-box;
+  color: #191d23;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar__heading {
+  margin: 1rem 0;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+.sidebar__menu {
+  list-style-type: none;
+  text-transform: capitalize;
+}
+
+.sidebar__list {
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #191d23;
+  cursor: pointer;
+}
+
+.sidebar__list :first-child {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.second-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prespace {
+  padding-left: 0.5rem;
+}
+
+.sidebar__list--left {
+  flex: 0 0 70%;
+}
+
+.sidebar__list--right {
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 0px 10px;
+  color: #fff;
+  background: #f52685;
+  border-radius: 4px;
+}
+
+.sidebar__list--right2 {
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 0px 10px;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 1.5rem;
+}
+
+.sidebar__submenu {
+  margin-left: 0.5rem;
+  list-style: none;
+  padding-left: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid #e7eaee;
+}
+
+.sidebar__submenu-item {
+  padding: 8px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.sidebar__baselist {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar__baselist--left {
+  display: flex;
+}
+.baselist-before {
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid #f52685;
+  border-radius: 100%;
+  margin-right: 0.2rem;
+}
+.baselist-after {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0;
+
+  color: #191d23;
+}
+.baselist-after p:nth-child(2) {
+  font-size: 10px;
+}

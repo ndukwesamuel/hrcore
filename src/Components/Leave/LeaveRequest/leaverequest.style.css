@@ -1,0 +1,158 @@
+.leaverequest {
+  width: 100%;
+  padding: 0 12rem;
+}
+.leaverequest__list {
+  margin: 0.5rem 0 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.leaverequest__item {
+  list-style: none;
+  cursor: pointer;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
+  text-transform: capitalize;
+}
+.leaverequest__item:first-child {
+  color: #667085;
+}
+.leaverequest__item:nth-child(2) {
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+.leaverequest__item:last-child {
+  color: #000;
+}
+
+.leaverequest__header {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #101828;
+  display: flex;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+
+.leaverequest__form {
+  background-color: #fff;
+  padding: 1rem 1rem;
+  box-shadow: 0px 3.73684px 7.47368px -1.86842px rgba(16, 24, 40, 0.1),
+    0px 1.86842px 3.73684px -1.86842px rgba(16, 24, 40, 0.06);
+    padding: 1rem 4rem;
+
+
+}
+
+@media (min-width: 961px) { 
+  .leaverequest__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0.93px solid #eaecf0;
+    box-shadow: 0px 3.73684px 7.47368px -1.86842px rgba(16, 24, 40, 0.1),
+      0px 1.86842px 3.73684px -1.86842px rgba(16, 24, 40, 0.06);
+    border-radius: 8px;
+  }
+
+
+  
+}
+
+
+@media (min-width: 1024px) { 
+
+
+
+  
+}
+
+
+.leaverequest__form label,
+.custom-label label {
+  text-transform: capitalize;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #344054;
+}
+.leaverequest__form input[type='text'],
+.leaverequest__form select,
+.daysummation,
+.custom-input,
+.leaverequest__form textarea {
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 0.3rem;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #667085;
+  margin: 0.3rem 0 0.75rem 0;
+  width: 100%;
+}
+.leaverequest__form input:focus,
+.leaverequest__form select:focus,
+.leaverequest__form textarea:focus,
+.custom-input input:focus {
+  border: 1px solid #d0d5dd;
+  outline: none;
+}
+.leaverequest__form select {
+  padding: 0.5rem 0.3rem;
+}
+
+.form-container {
+  margin-bottom: 1rem;
+}
+.daysummation {
+  display: flex;
+  justify-content: space-between;
+  background: #f0f0f0;
+  gap: 8px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.leaverequest__form input[type='submit'] {
+  background: #2a72a8;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.leaverequest__option {
+  display: flex !important;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.leaverequest__option--left {
+  flex: 0 0 45%;
+}
+.leaverequest__option--right {
+  flex: 0 0 45%;
+}
+
+
+

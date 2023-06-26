@@ -1,0 +1,7 @@
+.new {
+    border: 2px solid orange;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }

@@ -1,0 +1,19 @@
+.leavemanagement {
+  background-color: #eff6fc;
+  min-height: 100vh;
+  display: flex;
+}
+
+.leavemanagement__left {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 18%;
+  background: #ffffff;
+  border-right: 1px solid #d0d5dd;
+}
+
+.leavemanagement__right {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 82%;
+}

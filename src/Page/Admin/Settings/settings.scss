@@ -1,0 +1,15 @@
+
+
+.main_Setting button{
+    padding: 5px 15px;
+}
+
+@media (min-width:1024px) { /* big landscape tablets, laptops, and desktops */
+
+
+
+
+    .main_Setting button{
+        padding: 5px 5px;
+    }
+}
